@@ -79,6 +79,7 @@ App.Whiskey.FIXTURES = [
   rating: 0,
   image: 'images/LARCENY_BOURBON.png'}
 ];
+
 App.WhiskeysRoute = Ember.Route.extend({
   model: function() {
     return this.store.findAll('whiskey');
