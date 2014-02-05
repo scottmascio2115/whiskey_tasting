@@ -1,0 +1,49 @@
+/* Put your CSS here */
+.ember-application {
+    margin: 20px;
+}
+
+.container{
+  color:#d59a6f;
+}
+
+#welcome{
+  color:#d59a6f;
+  font-family: 'Frijole', cursive;
+}
+
+#steps{
+  color:#d59a6f;
+  font-family: 'Frijole', cursive;
+  text-align: center;
+}
+
+#tasting_steps{
+  font-size: 15px;
+}
+
+#hello{
+  font-size: 15px;
+  text-align: center;
+}
+
+footer{
+  color:#d59a6f;
+}
+
+.references a{
+  color:#d59a6f;
+}
+
+ul a{
+  color:#d59a6f;
+  font-family: 'Balthazar', serif;
+  font-size: 24px;
+
+}
+
+
+
+
+
+
