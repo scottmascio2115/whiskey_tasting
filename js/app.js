@@ -42,6 +42,7 @@ App.Whiskey.FIXTURES = [
   proof: '80 proof',
   price: '$49.99',
   food: '',
+  food_image: 'images/beef_crostini.png',
   rating: 0,
   image: 'images/basil_haydens5.png'},
 
@@ -52,6 +53,7 @@ App.Whiskey.FIXTURES = [
   proof: '90 proof',
   price: '$23.99',
   food: '',
+  food_image: 'images/beef_crostini.png',
   rating: 0,
   image: 'images/makers_mark.png'},
 
@@ -62,6 +64,7 @@ App.Whiskey.FIXTURES = [
   proof: '140 proof',
   price: '$59.99',
   food: '',
+  food_image: 'images/beef_crostini.png',
   rating: 0,
   image: 'images/blantons.png'},
 
@@ -72,6 +75,7 @@ App.Whiskey.FIXTURES = [
   proof: '92 proof',
   price: '$29.99',
   food: '',
+  food_image: 'images/beef_crostini.png',
   rating: 0,
   image: 'images/LARCENY_BOURBON.png'}
 ];
