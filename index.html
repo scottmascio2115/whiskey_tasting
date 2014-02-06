@@ -104,7 +104,7 @@
   <div class="container">
 
       <h1 class="muted text-center">{{title}}</h1>
-        <ul class="list-unstyled col-md-8">
+        <ul class="list-unstyled col-md-12">
             <li class='row'>
             <br>
             <br>
@@ -113,14 +113,9 @@
                   <p class='product-description'>{{description}}</p>
                   <h5>{{proof}}</h5>
                   <h5>Price:  {{price}}</h5>
-                  <h5>Best Served With:  {{food}}</h5>
-                  <img {{bind-attr src='food_image'}} class='img-thumbnail col-md-4'/>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
                   <h5>Mascio Party Rating:  {{rating}}</h5>
+                  <h5>Served With:  {{food}}</h5>
+                  <img {{bind-attr src='food_image'}} class='img-thumbnail col-md-4'/>
                 </div>
             </li>
         </ul>
