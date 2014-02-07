@@ -4,7 +4,7 @@ App = Ember.Application.create();
 App.Router.map(function() {
   this.resource('whiskeys');
   this.resource('whiskey', {path: '/:whiskey_id'});
-  this.route('rate');
+  this.resource('reviews');
 });
 
 App.ApplicationAdapter = DS.FixtureAdapter.extend();
@@ -18,10 +18,25 @@ App.Whiskey = DS.Model.extend({
   food: DS.attr('string'),
   food_image: DS.attr('string'),
   rating: DS.attr('number'),
-  image: DS.attr('string')
+  image: DS.attr('string'),
+  review: DS.hasMany('review', {async: true})
 });
 
+App.Review = DS.Model.extend({
+  text: DS.attr('string'),
+  whiskey_type: DS.attr('string'),
+  author: DS.attr('string'),
+  whiskey: DS.belongsTo('whiskey')
+})
 
+App.Review.FIXTURES = [
+  {id:1,
+    whiskey_type: 'Makers Mark',
+    text:"Great first whiskey to try!",
+    author:"Scott Mascio"
+  }
+
+];
 
 App.Whiskey.FIXTURES = [
   {
@@ -86,8 +101,45 @@ App.WhiskeysRoute = Ember.Route.extend({
   }
 });
 
+App.ReviewsRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.findAll('review');
+  }
+});
+
 App.WhiskeyRoute = Ember.Route.extend({
   model: function(params) {
     return this.store.find('whiskey', params.whiskey_id);
   }
 });
+
+App.WhiskeysController = Ember.ArrayController.extend({
+  sortProperties: ['price'],
+  sortAscending: true
+});
+
+App.ReviewsController = Ember.ArrayController.extend({
+  actions: {
+    createReview: function() {
+
+      var whiskey = $('#whiskey_type').val();
+      var text = $('#text').val();
+      var author = $('#author').val();
+
+
+
+      var whiskey = this.store.createRecord('review', {
+        whiskey_type: whiskey,
+        text: text,
+        author: author
+      });
+
+
+      whiskey.save();
+      this.transitionTo('whiskeys');
+
+
+    }
+  }
+});
+
